@@ -10,8 +10,8 @@ module.exports = {
 
 execute (client, message, args){
 
-var perms = message.member.hasPermission("KICK_MEMBERS")
-if(!perms) return message.channel.send("No tienes permiso para este comando")
+var perms = message.member.hasPermission("MANAGE_MESSAGES")
+  if(!perms) return message.channel.send("No tienes permiso para este comando")
 
 
 let persona = message.mentions.members.first()
