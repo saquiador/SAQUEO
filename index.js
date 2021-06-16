@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 
 
 
-let prefix = 'r!'
+let prefix = 'U!'
 
 const config = require('./config')
 client.config = config
@@ -34,15 +34,14 @@ client.giveawaysManager = new GiveawaysManager(client, {
 })
 
 
-
-const estados = ['RBXS Land', 'legit', 'r!help', 'Jugando roblox']
+const estados = ['giveaways', 'legit', 'U!help', 'Nitro']
 
 client.on('ready', () => {
   
   setInterval(() => {
     function presence() {
       client.user.setPresence({
-        status: 'dnd', 
+        status: 'idle', 
         activity: {
          name: estados[Math.floor(Math.random() * estados.length)],
         type: 'PLAYING',
@@ -50,7 +49,7 @@ client.on('ready', () => {
       })
     }
     presence()
-  }, 10000);
+  }, 1000);
   
   console.log('go')
 });
