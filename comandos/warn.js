@@ -17,6 +17,11 @@ var perms = message.member.hasPermission("MANAGE_MESSAGES")
 let persona = message.mentions.members.first()
 if(!persona) return message.channel.send("Debes escribir a alguien")
 
+ if(persona.id === client.user.id) return message.channel.send("No puedes warnear me , usa otro bot")
+
+
+
+if(persona === message.author) return message.channel.send("No te puedes banear a ti mismo")
 
 var razon = args.slice(1).join(" ")
 if(!razon){ 
@@ -33,7 +38,7 @@ warns.sumar(`${message.guild.id}.${persona.id}`, 1)
 const embed = new Discord.MessageEmbed()
 
  .setTitle("🚫warn🚫")
- .setDescription(`El moderador ${message.author.tag} alvirtio a **${persona.tag}** por **${razon}**`)
+ .setDescription(`El moderador ${message.author} alvirtio a **${persona}** por **${razon}**`)
  .setColor("RED")
 
 

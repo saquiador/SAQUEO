@@ -6,7 +6,7 @@ const cosa = new db.crearDB('canalsugerencias')
 
 module.exports = {
   name: "sugerencia", 
-  alias: [""], 
+  alias: ["su"], 
 
 async execute (client, message, args){
 

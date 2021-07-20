@@ -18,6 +18,10 @@ if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("
 const user = message.mentions.members.first()
 if(!user) return message.channel.send("Debes mencionar a alguien")
 
+ if(user.id === client.user.id) return message.channel.send("No puedes kickear me , usa otro bot")
+
+if(message.member.roles.highest.comparePositionTo(user.roles.highest) <= 0) return message.channel.send("No puedes kickear a alguien con poder, ni a ti mi")
+
 if(user === message.author) return message.channel.send("No te puedes expulzar a ti Mismo")
 
   var razon = args.slice(1).join(' ')

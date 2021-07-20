@@ -15,7 +15,7 @@ execute (client, message, args){
   var perms = message.member.hasPermission("MANAGE_MESSAGES")
   if(!perms) return message.channel.send("No tienes permiso para este comando")
   
-  if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.sens("nesecitas el permiso **gestionar mesaje** para usarlo")
+  if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send("nesecitas el permiso **gestionar mesaje** para usarlo")
   
   if(!cantidad) return message.channel.send("escribe un numero")
   if(cantidad === '0') return message.channel.send("Debes escribir un numero mayor al 0!")

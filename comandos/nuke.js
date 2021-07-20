@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, MessageEmbed } = require('discord.js');
+const db = require('megadb')
+const warns = new db.crearDB('rol')
 
 module.exports = {
   name: "nuke", 
-  alias: [""], 
+  alias: ["n"], 
 
 execute (client, message, args){
 

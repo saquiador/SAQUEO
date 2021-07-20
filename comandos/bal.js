@@ -7,7 +7,7 @@ const dinero = new db.crearDB('dinero')
 
 module.exports = {
   name: "bal", 
-  alias: [""], 
+  alias: ["b"], 
 
 async execute (client, message, args){
 
@@ -21,8 +21,10 @@ const cantidad = await dinero.obtener(`${user.id}`)
 
 const embed = new Discord.MessageEmbed()
 
+ .setAuthor(message.author.tag, message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 }))
  .setTitle("💰BALANCE💰")
  .setDescription(`El usuario **${user}** tiene **${cantidad}** De Dinero 💵`)
+ .setThumbnail(message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 }))
  .setColor("GREEN")
 
 message.channel.send(embed)

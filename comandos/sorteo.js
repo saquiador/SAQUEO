@@ -42,7 +42,7 @@ client.giveawaysManager.start(channel, {
     giveaway: (client.config.everyoneMention ? "hola\n\n" : "") + "**NUEVO SORTEO**",
     giveawayEnded: (client.config.everyoneMention ? "VEAMOS\n\n" : "") + "**<a:4304_party10000:847679200130367529><a:4304_party10000:847679200130367529>SORTEO FINALISADO<a:4304_party10000:847679200130367529><a:4304_party10000:847679200130367529>**",
     timeRemainig: 'Tiempo restante: **{duration}**',
-    invitaParticipate: 'Reacciona en <a:4304_party10000:847679200130367529> para participar',
+    invitaToParticipate: 'Reacciona en <a:4304_party10000:847679200130367529> para participar',
     winMessage: '<a:giftemoji:847678819409854474> Aganado... **{winners}** <a:4304_party10000:847679200130367529> tu premio es **{prize}**',
     embedFooter: "Winner",
     noWinner: "Nadie participo en el sorteo <:pepesip:847322763568218122>",
