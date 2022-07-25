@@ -7,8 +7,7 @@ const {MessageMenuOption, MessageMenu} = require("discord-buttons")
 const { Client, Intents, MessageEmbed, Collection, Guild } = require('discord.js');
 
 
-require('dotenv').config();
-const keepAlive = require('./server.js');
+
 const fs = require('fs'); 
 let { readdirSync } = require('fs');
 
