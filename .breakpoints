@@ -1,17 +1,25 @@
 {
   "files": {
+    "comandos/info.js": [
+      {
+        "id": "284b76f4-afd6-4c4a-a0d1-921895833d87",
+        "line": 1,
+        "version": 40,
+        "index": 0
+      }
+    ],
     "index.js": [
       {
-        "id": "c4a8abe6-07c7-4513-b884-e192b0d95044",
-        "line": 8,
-        "version": 2551,
-        "index": 315
+        "id": "a4997638-a59a-4661-b5d4-7cc8d355fc35",
+        "line": 68,
+        "version": 1040,
+        "index": 1642
       },
       {
-        "id": "a4997638-a59a-4661-b5d4-7cc8d355fc35",
-        "line": 64,
-        "version": 2551,
-        "index": 1494
+        "id": "715a82b1-a3da-4606-bb35-67a415423ea2",
+        "line": 238,
+        "version": 1040,
+        "index": 9150
       }
     ]
   }

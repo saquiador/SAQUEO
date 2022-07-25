@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"635fc8b2cdc8b6425d43e2616fca689b","lockfileHash":"549bb914e761970a18c12b8095104cfc","guessedImports":["discord.js","megadb","ms","express","dotenv","discord-buttons","discord-giveaways"],"guessedImportsHash":"d8950fffc83a86073c80c80b67097d50"}}}

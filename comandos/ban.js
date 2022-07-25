@@ -3,8 +3,8 @@ const client = new Discord.Client();
 const { Client, MessageEmbed } = require('discord.js');
 
 module.exports = {
-  name: "ban", 
-  alias: ["banear"], 
+  name: "banear", 
+  alias: ["ban-user"], 
 
 execute (client, message, args){
 
