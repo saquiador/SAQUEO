@@ -5,6 +5,7 @@ require('discord-buttons')(client);
 const disbut = require("discord-buttons") 
 const {MessageMenuOption, MessageMenu} = require("discord-buttons")
 const { Client, Intents, MessageEmbed, Collection, Guild } = require('discord.js');
+const path = require('path');
 
 
 
@@ -15,13 +16,23 @@ const db = require('megadb')
 const prefix_db = new db.crearDB('prefix')
 
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./comandos').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commads').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-    const command = require(`./comandos/${file}`);
+    const command = require(`./commads/${file}`);
     client.commands.set(command.name, command);
 }
 
+client.slashCommands = new Collection();
+
+const slashCommandFolder = path.join(__dirname, 'commands/slashcmd'); // este es la carpeta donde iran los slash
+const slashCommandFiles =  fs.readdirSync(slashCommandFolder).filter(file => file.endsWith('.js')); // Filtra solo los .js
+
+for (const file of slashCommandFiles) {
+    const filePath = path.join(slashCommandFolder, file);
+    const command = require(filePath);
+    client.slashCommands.set(command.data.name, command);
+}
 
 
 
@@ -165,7 +176,7 @@ let men = new disbut.MessageMenu()
 
 
 .setTitle("Bienvenido al apartado de ayuda")
-.setDescription('<:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274>\n\n<a:arrowblinking:1000616833797341306> Reacciona en <:settings:1000615128296853564> para ir al apartado de  moderacion\n\n<a:arrowblinking:1000616833797341306> Reacciona en <:settings:1000615128296853564>  para ir al apartado de configuracion\n\n<a:arrowblinking:1000616833797341306> Reacciona en <:settings:1000615128296853564> para regresar a la pagina principal\n\n<:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274>')
+.setDescription('<:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274>\n\n<a:arrowblinking:1000616833797341306> Reacciona en <:rules:1000614433397145710>  para ir al apartado de  moderacion\n\n<a:arrowblinking:1000616833797341306> Reacciona en <:settings:1000615128296853564>  para ir al apartado de configuracion\n\n<a:arrowblinking:1000616833797341306> Reacciona en <a:moon:1000615406488277003>  para regresar a la pagina principal\n\n<:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274><:RedLine:1000613707115659274>')
 .setAuthor(message.author.tag, message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 }))
 .setFooter("Alma de roble")
 .setColor("#c50000")
@@ -234,4 +245,4 @@ cmd.execute(client, message, args)
 
 
 
-client.login("MTAwMDU5NzEwMjg0NzYwMjY5OA.GlVfqV.GWqTxyllWSoeepurRebsROIGzaYQTS6yxH0L60")
+client.login("MTAwMDU5NzEwMjg0NzYwMjY5OA.G9Gmlx.HkkVLCUGDTaoPE5v_G1iYGQ2Xfq74MMH-TLxWw")
