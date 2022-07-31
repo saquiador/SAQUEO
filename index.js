@@ -128,7 +128,7 @@ client.on('message', async message => {
   if(prefix_db.tiene(message.guild.id)) {
     prefix = await prefix_db.obtener(message.guild.id)
   }else{
-   prefix = '/'
+   prefix = '.'
   }
   //Abrimos un evento message, esto es muy importante porque es donde estarán los comandos
   if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
