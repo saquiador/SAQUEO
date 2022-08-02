@@ -16,6 +16,6 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '9' }).setToken("MTAwMDU5NzEwMjg0NzYwMjY5OA.G9Gmlx.HkkVLCUGDTaoPE5v_G1iYGQ2Xfq74MMH-TLxWw"); // aqui cambian eso por su token
 
-rest.put(Routes.applicationGuildCommands(clientId), { body: commands })
+rest.put(Routes.applicationCommands(clientId), { body: commands })
     .then(() => console.log('Slash commands registrados correctamente.'))
     .catch(console.error);

@@ -9,11 +9,16 @@ module.exports = {
     data: new SlashCommandBuilder()
 
   .setName("setprefix")
-  .setDescription("selecciona un prefix"),
+  .setDescription("selecciona un prefix")
+  .addStringOption(option => option.setName("prefix").setDescription("Selecciona un prefix").setRequired(true)),
 
   async run(client, interaction){
 
-  var perms = message.member.hasPermission("ADMINISTRATOR")
+    const prefix = interaction.options.getString("prefix");
+    await interaction.deferReply()
+
+    setTimeout(() =>{
+      var perms = message.member.hasPermission("ADMINISTRATOR")
   if(!perms) return message.channel.send("No tenienes sufiecientes permisos")
 
   if(!args[0]) return message.channel.send("debes decir un nuevo prefix")
@@ -23,7 +28,8 @@ module.exports = {
 
   prefix_db.establecer(message.guild.id, args[0])
 
-  interaction,reply({content: `El prefix ha sido cambiado a **${args[0]}**`})
+  interaction.message({content: `El prefix ha sido cambiado a **${args[0]}**`})
+    }, 3000)
 
  }
 
