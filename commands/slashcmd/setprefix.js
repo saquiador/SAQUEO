@@ -10,12 +10,11 @@ module.exports = {
 
   .setName("setprefix")
   .setDescription("selecciona un prefix")
-  .addStringOption(option => option.setName("prefix").setDescription("Selecciona un prefix").setRequired(true)),
+  .addUserOption(option => option.setName("prefix").setDescription("Selecciona un prefix").setRequired(true)),
 
   async run(client, interaction){
 
-    const prefix = interaction.options.getString("prefix");
-    await interaction.deferReply()
+    const prefix = interaction.options.getUser("prefix");
 
     setTimeout(() =>{
       var perms = message.member.hasPermission("ADMINISTRATOR")
@@ -28,7 +27,8 @@ module.exports = {
 
   prefix_db.establecer(message.guild.id, args[0])
 
-  interaction.message({content: `El prefix ha sido cambiado a **${args[0]}**`})
+ message.channel.send({content: `El prefix ha sido cambiado a **${args[0]}**`, ephemeral: true });
+
     }, 3000)
 
  }
