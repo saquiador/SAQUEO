@@ -123,18 +123,7 @@ client.on('ready', async ()  =>  {
 client.on('message', async message => { 
 
 
-  let prefix;
-
-  if(prefix_db.tiene(message.guild.id)) {
-    prefix = await prefix_db.obtener(message.guild.id)
-  }else{
-   prefix = '.'
-  }
-  //Abrimos un evento message, esto es muy importante porque es donde estarán los comandos
-  if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
-  if(message.author.bot) return; //Con esto hacemos que el bot no responda a mensajes de otros bots lo cual evitará que entre en bucles
-message.channel.send(`usa el comando ${prefix}help`)
-}
+  let prefix = '.'
 
 
   
