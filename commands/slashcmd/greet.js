@@ -13,7 +13,7 @@ module.exports = {
 
   async run(client, interaction){
 
-    const channel = interaction.options.getChannel('destination');
+    const channel = interaction.options.getChannel('greet');
    var perms = message.member.hasPermission("MANAGER_CHANNELS")
    if(!perms) return message.channel.send("no tienes permiso!")
   
@@ -28,7 +28,7 @@ greet.establecer(`${message.guild.id}`, `${canal.id}`)
     
     setTimeout(() =>{
 
-  interaction.reply({content: `El prefix ha sido cambiado a **${args[0]}**`, ephemeral: true });
+  interaction.reply({content: `El canal de aviso es **${canal}**`, ephemeral: true });
 
     }, 3000)
 
