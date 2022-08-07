@@ -9,15 +9,14 @@ module.exports = {
 
   .setName("greet")
   .setDescription("selecciona el canal de aviso")
-  .addChannelOption(option => option.setName("greet").setDescription("selecciona canal de aviso").setRequired(true)),
+  .addChannelOption(option => option.setName("greet").setDescription("selecciona canal de aviso").setRequired(true))
+  .setDefaultMemberPermissions('MANAGER_CHANNELS'),
 
   async run(client, interaction){
 
     const channel = interaction.options.getChannel('greet');
-   var perms = message.member.hasPermission("MANAGER_CHANNELS")
-   if(!perms) return message.channel.send("no tienes permiso!")
   
-  if(!canal) return message.channel.send("Debes mencionar un canal")
+  if(!channel) return message.channel.send("Debes mencionar un canal")
   
   message.channel.send(`El canal de greet es ${channel}`)
 
