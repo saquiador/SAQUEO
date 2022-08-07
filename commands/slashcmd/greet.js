@@ -17,10 +17,9 @@ module.exports = {
    var perms = message.member.hasPermission("MANAGER_CHANNELS")
    if(!perms) return message.channel.send("no tienes permiso!")
   
-  const canal =  message.mentions.channels.first()
   if(!canal) return message.channel.send("Debes mencionar un canal")
   
-  message.channel.send(`El canal de greet es ${canal}`)
+  message.channel.send(`El canal de greet es ${channel}`)
 
 
 
@@ -28,7 +27,7 @@ greet.establecer(`${message.guild.id}`, `${canal.id}`)
     
     setTimeout(() =>{
 
-  interaction.reply({content: `El canal de aviso es **${canal}**`, ephemeral: true });
+  interaction.reply({content: `El canal de aviso es **${channel}**`, ephemeral: true });
 
     }, 3000)
 
