@@ -10,7 +10,7 @@ module.exports = {
   .setName("greet")
   .setDescription("selecciona el canal de aviso")
   .addChannelOption(option => option.setName("greet").setDescription("selecciona canal de aviso").setRequired(true))
-  .setDefaultMemberPermissions('MANAGER_CHANNELS'),
+  .setDefaultMemberPermissions('MANAGE_CHANNELS'),
 
   async run(client, interaction){
 
