@@ -6,21 +6,22 @@ const greet = new db.crearDB('greet')
 const timer = new db.crearDB('timer')
 
 module.exports = {
-  name: "delete-greet", 
-  alias: ["delgreet"], 
+  name: "greet", 
+  alias: ["setgreet"], 
 
 execute (client, message, args){
 
   var perms = message.member.hasPermission("MANAGER_CHANNELS")
   if(!perms) return message.channel.send("no tienes permiso!")
   
-
+  const canal =  message.mentions.channels.first()
+  if(!canal) return message.channel.send("Debes mencionar un canal")
   
-  message.channel.send(`El greet se a eliminado`)
+  message.channel.send(`El canal de greet es ${canal}`)
 
 
 
-greet.eliminar(`${message.guild.id}`)
+greet.establecer(`${message.guild.id}`, `${canal.id}`)
 
 
 

@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { Client, MessageEmbed } = require('discord.js');
 
 module.exports = {
-  name: "banear", 
+  name: "ban", 
   alias: ["ban-user"], 
 
 execute (client, message, args){
@@ -15,13 +15,13 @@ execute (client, message, args){
   let banReason = args.join(' ').slice(22);
   if(!user) return message.channel.send("menciona a alguien")
 
-  if(user.id === client.user.id) return message.channel.send("No puedes banear me , usa otro bot")
+  if(user.id === client.user.id) return message.channel.send("No me puedo auto banear")
 
-  if(user === message.author) return message.channel.send("No te puedes banear a ti mismo")
-  if(message.member.roles.highest.comparePositionTo(user.roles.highest) <= 0) return message.channel.send("No puedes banear a alguien con poder , ni a ti mismo")
+  if(user === message.author) return message.channel.send("error verifica a quien quieres banear")
+  if(message.member.roles.highest.comparePositionTo(user.roles.highest) <= 0) return message.channel.send("error verifica a quien quieres banear")
   
   
-  if(!banReason) return message.channel.send("Escribe una razon")
+  if(!banReason) return message.channel.send("Motivo del ban")
   
   user.ban({ reason: banReason})
 

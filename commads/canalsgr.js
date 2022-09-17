@@ -15,7 +15,7 @@ execute (client, message, args){
   const canal =  message.mentions.channels.first()
   if(!canal) return message.channel.send("Debes mencionar un canal")
   
-  message.channel.send(`Todos ha salido bien! 😎 las sugerecias seran enviadas a ${canal}`)
+  message.channel.send(`el proceso a sido exitoso ahora ${canal} es el canal de sugerencias!`)
 
 canalsgr.establecer(`${message.guild}`, `${canal.id}`)
  }
